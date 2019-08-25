@@ -87,8 +87,12 @@
             <div class="row">
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img src="img/hello_world.jpg" />
+                        <!-- <img src="img/hello_world.jpg" /> -->
                         <img src="img/hello_the_world.jpg" />
+                        <video width="250" id="video1" onclick="playPause()" style="vertical-align: middle;">
+                          <source src="img/fr_to_en.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
@@ -344,6 +348,29 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/scripts.min.js"></script>
+    <script> 
+var myVideo = document.getElementById("video1"); 
+
+function playPause() { 
+    myVideo.currentTime = 0;
+  if (myVideo.paused) 
+    myVideo.play(); 
+  else 
+    myVideo.pause(); 
+} 
+myVideo.addEventListener("mouseover", function( event ) {   
+    myVideo.currentTime = 0;
+    var playPromise = myVideo.play();
+ 
+      if (playPromise !== undefined) {
+        playPromise.then(_ => {
+        })
+        .catch(error => {
+          myVideo.play();
+        });
+      }
+}, false);
+</script>
 </body>
 
 </html>
