@@ -9,11 +9,11 @@
 	<key>manifest</key>
 	<dict>
 		<key>appURL</key>
-		<string>https://www.bensonwong.ca</string>
+		<string>https://blinkblonk.com</string>
 		<key>displayImageURL</key>
-		<string>https://www.bensonwong.ca/img/blink_57.png</string>
+		<string>https://blinkblonk.com/img/blink_57.png</string>
 		<key>fullSizeImageURL</key>
-		<string>https://www.bensonwong.ca/img/blink_512.png</string>
+		<string>https://blinkblonk.com/img/blink_512.png</string>
 	</dict>
 	<key>method</key>
 	<string>ad-hoc</string>
