@@ -87,10 +87,15 @@
             <div class="row">
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <!-- <img src="img/hello_world.jpg" /> -->
-                        <img src="img/hello_the_world.jpg" />
-                        <video width="250" id="video1" onclick="playPause()" style="vertical-align: middle;">
-                          <source src="img/fr_to_en.mp4" type="video/mp4">
+                        <!-- <img src="images/hello_world.jpg" /> -->
+                        <!-- <img src="images/hello_the_world.jpg" /> -->
+                        <video width="250" id="video1" onclick="playPause(1)" style="vertical-align: middle;">
+                          <source src="videos/local.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+
+                        <video width="250" id="video2" onclick="playPause(2)" style="vertical-align: middle;">
+                          <source src="videos/travel.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                     </div>
@@ -99,14 +104,14 @@
                         <h3>Machine Learning App</h3>
                         <h5>Blink Blonk</h5>
                         <p>
-                            In progress, can detect text and augment the detected text on top. Can also take a capture and translate the text. A lot works offline but you'll need to go to settings to download the language packs. Swipe left for settings.
+                            Detect text and augment the detected text on top. 
+                            Take a capture and touch or drag to interact with elements.
+                            Automatic translations to base language. Automatic conversion to base currency. Open links with a tap. 
+                            Works entirely offline.
                         </p>
-                        <p>
-                            Note these are actually direct links to install and not through the app stores... for now
-                        </p>
-<a href="https://apps.apple.com/us/app/blink-blonk/id1477688547?ls=1"><img src="img/download_ios.png" style="width:120px"/></a>
+<a href="https://apps.apple.com/us/app/blink-blonk/id1477688547?ls=1"><img src="images/download_ios.png" style="width:120px"/></a>
 
-<a href="https://play.google.com/store/apps/details?id=ca.bensonwong.blink"><img src="img/download_android.png" style="width:120px"/></a>
+<a href="https://play.google.com/store/apps/details?id=ca.bensonwong.blink"><img src="images/download_android.png" style="width:120px"/></a>
                     </div>
 
                     <!-- End .project-info -->
@@ -349,27 +354,41 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/scripts.min.js"></script>
     <script> 
-var myVideo = document.getElementById("video1"); 
 
-function playPause() { 
-    myVideo.currentTime = 0;
-  if (myVideo.paused) 
-    myVideo.play(); 
-  else 
-    myVideo.pause(); 
+var myVideo = document.getElementById("video1"); 
+var myVideo2 = document.getElementById("video2"); 
+
+function playPause(id) { 
+    var video = document.getElementById("video" + id); 
+    video.currentTime = 0;
+      if (video.paused) 
+        video.play(); 
+      else 
+        video.pause(); 
 } 
 myVideo.addEventListener("mouseover", function( event ) {   
     myVideo.currentTime = 0;
     var playPromise = myVideo.play();
- 
-      if (playPromise !== undefined) {
+
+    if (playPromise !== undefined) {
         playPromise.then(_ => {
-        })
-        .catch(error => {
+        }).catch(error => {
           myVideo.play();
         });
-      }
+    }
 }, false);
+
+myVideo2.addEventListener("mouseover", function( event ) {   
+    myVideo2.currentTime = 0;
+    var playPromise2 = myVideo2.play();
+
+    if (playPromise2 !== undefined) {
+        playPromise2.then(_ => {
+        }).catch(error => {
+        });
+    }
+}, false);
+
 </script>
 </body>
 
