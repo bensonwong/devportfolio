@@ -50,7 +50,7 @@
         <div id="lead-content">
             <h1>Benson Wong</h1>
             <h2>Full stack developer / Angel Investor</h2>
-            <h5>Email me at benw1024@gmail.com</h5>
+            <h5 style="color:white">Email me at benw1024@gmail.com</h5>
             <!-- <a href="#" class="btn-rounded-white">Download Resume</a> -->
         </div>
         <!-- End #lead-content -->
@@ -74,7 +74,7 @@
                 </div>
                 <div class="col-md-8">
                     <p>
-                        Able to leverage the most relevant software platforms to get clients to MVP within months while avoiding technical debt. Available for contract work. 
+                        My approach is to leverage the immense knowledge of industries and leaders to effectively advise clients or iterate thought processes and projects. Available for work. 
                     </p>
                 </div>
             </div>
@@ -86,6 +86,49 @@
         <h2 class="heading">Projects</h2>
         <div class="container">
             <div class="row">
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        
+                        <!-- <img src="images/hello_the_world.jpg" /> -->
+                        <iframe src="https://player.vimeo.com/video/379638951" width="500" height="600" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Sampll</h3>
+                        <h5>Current (WIP)</h5>
+                        <p>
+                            The tech work involves an app using flutter, nosql db, and will be MVP ready for Feb. But rather than write about it I'll let my new wonderful friend explain it
+                            <br/>
+                            <a href="https://www.sampll.com/">Visit here</a>
+                            <a href="https://www.sampll.com/"><img src="images/sampll.jpg" /></a>
+                        </p>
+                    </div>
+
+                    <!-- End .project-info -->
+                </div>
+
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <!-- <img src="images/hello_world.jpg" /> -->
+                        <!-- <img src="images/hello_the_world.jpg" /> -->
+                        <video width="250" id="video3" onclick="playPause(3)" style="vertical-align: middle;">
+                          <source src="videos/drphil-noaudio.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Offline transcriptions for note taking support</h3>
+                        <h5>Current (WIP)</h5>
+                        <p>
+                            Works entirely offline. Uses on-device speech-to-text to transcribe from a microphone or saved video/audio files. Plays back and highlights words, might be good for listening comprehension. Can filter/search through meeting notes so there's a visual representation of the meeting. 
+                        </p>
+                    </div>
+
+                    <!-- End .project-info -->
+                </div>
+
                 <div class="project shadow-large">
                     <div class="project-image">
                         <!-- <img src="images/hello_world.jpg" /> -->
@@ -117,6 +160,7 @@
 
                     <!-- End .project-info -->
                 </div>
+
 
                 <div class="project shadow-large">
                     <div class="project-image">
@@ -173,9 +217,16 @@
     <div id="experience" class="background-alt">
         <h2 class="heading">Experience</h2>
         <div id="experience-timeline">
+            <div data-date="June 2019 - Current">
+                <h3>Software Consultant</h3>
+                <h4>Full Stack Developer/Angel Investor</h4>
+                <p>
+                    Wrote some flutter apps learning dart, ML, nosql, and other modern concepts.
+                </p>
+            </div>
             <div data-date="May 2018 - June 2019">
                 <h3>Athletica rewards</h3>
-                <h4>CTO / Angel Investor</h4>
+                <h4>CTO</h4>
                 <p>
                     The tech and leadership went amazing and that's what we should focus on :) 
                 </p>
@@ -358,6 +409,7 @@
 
 var myVideo = document.getElementById("video1"); 
 var myVideo2 = document.getElementById("video2"); 
+var myVideo3 = document.getElementById("video3"); 
 
 function playPause(id) { 
     var video = document.getElementById("video" + id); 
@@ -385,6 +437,17 @@ myVideo2.addEventListener("mouseover", function( event ) {
 
     if (playPromise2 !== undefined) {
         playPromise2.then(_ => {
+        }).catch(error => {
+        });
+    }
+}, false);
+
+myVideo3.addEventListener("mouseover", function( event ) {   
+    myVideo3.currentTime = 0;
+    var playPromise3 = myVideo3.play();
+
+    if (playPromise3 !== undefined) {
+        playPromise3.then(_ => {
         }).catch(error => {
         });
     }
